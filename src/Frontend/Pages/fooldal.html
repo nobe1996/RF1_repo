@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <title>Könyvtár</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../Scripts/API.js"></script>
+    <script src="../Scripts/changeSidebar.js"></script>
+    <link rel="stylesheet" type="text/css" href="../CSS/theme.css">
+</head>
+<body>
+
+<div class="content">
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Online Könyvtár</h1>
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="fooldal.html">Főoldal</a></li>
+                <li><a href="konyvekbongeszese.html">Könyvek böngészése</a></li>
+                <li><a href="kosaram.html">Kosár</a></li>
+                <li><a href="konyvhozzaad.html">Könyv beadás</a></li>
+                <li><a href="kapcsolat.html">Kapcsolat</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Keresés" name="q">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div id="sidebar" class="col-sm-2 sidenav">
+            <form method="post" onsubmit="login()" >
+                <div class="form-group">
+                    <label for="username">Felhasználónév</label>
+                    <input type="username" class="form-control" id="username" placeholder="Felhasználónév" name="username">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Jelszó:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Jelszó" name="pwd">
+                </div>
+          <!--      <div class="checkbox">
+                    <label><input type="checkbox" name="remember"> Jegyezz meg</label>
+                </div> -->
+                <input type="submit" class="btn btn-default" value="Bejelentkezés" />  <!-- Bejelentkezés</input> -->
+            </form>
+            <a href="#" class="forgot-password">
+                Elfelejtettem a jelszót
+            </a>
+            <br>
+            <a href="regisztracio.html">Regisztráció</a>
+
+        </div>
+        <br><div class="col-sm-10 text-left">
+        <div class="container">
+            <h3>Legújabb kínálatunk</h3>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/AZ_cover.jpg" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer" id="topN0"><a href="#">Stephen King<br>AZ</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/JACKREACHER_cover.jpg" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer" id="topN1"><a href="#">Lee Child<br>A nevem: Jack Reacher</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/GOT_cover.png" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer" id="topN2"><a href="#">George R. R. Martin<br>Trónok harca</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/CUJO_cower.png" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer" id="topN3"><a href="#">Stephen King<br>Cujo</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/WOT_cover.png" class="img-responsive" alt="Image"></div>
+                        <div class="panel-footer" id="topN4"><a href="#">Robert Jordan<br>A Világ Szeme</a></div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container">
+            <h3>Legtöbbet kikölcsönzött</h3>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/GOT_cover.png" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer" id="topV0"><a href="#">George R. R. Martin<br>Trónok harca</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/JACKREACHER_cover.jpg" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer"id="topV1"><a href="#">Lee Child<br>A nevem: Jack Reacher</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/AZ_cover.jpg" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer" id="topV2"><a href="#">Stephen King<br>AZ</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/WOT_cover.png" class="img-responsive" alt="Image"></div>
+                        <div class="panel-footer" id="topV3" ><a href="#">Robert Jordan<br>A Világ Szeme</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/CUJO_cower.png" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer" id="topV4"><a href="#">Stephen King<br>Cujo</a></div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        <div class="container">
+            <h3>Utoljára kikölcsönzött</h3>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/GOT_cover.png" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer" id="topB0"><a href="#">George R. R. Martin<br>Trónok harca</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/JACKREACHER_cover.jpg" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer" id="topB1"><a href="#">Lee Child<br>A nevem: Jack Reacher</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/AZ_cover.jpg" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer" id="topB2"><a href="#">Stephen King<br>AZ</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/WOT_cover.png" class="img-responsive" alt="Image"></div>
+                        <div class="panel-footer" id="topB3"><a href="#">Robert Jordan<br>A Világ Szeme</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="panel panel-primary">
+                        <div class="panel-body"><img src="../assets/images/CUJO_cower.png" class="img-responsive"  alt="Image"></div>
+                        <div class="panel-footer" id="topB4"><a href="#">Stephen King<br>Cujo</a></div>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+
+        </div><br>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+<script>
+
+    var userId = -1;
+
+    var checkUser = new HttpClient();
+    checkUser.get('http://localhost:8082/user/isLogged', function(response) {
+        userId =response;
+    });
+
+
+
+    if(userId != -1){
+        document.getElementById("sidebar").innerHTML = '                <a href="myPage.html" class="btn btn-default btn-block">Adataim</a>\n' +
+            '                <button class="btn btn-default btn-block" onclick="logout()">Kijelentkezés</button>';
+    }
+
+
+
+
+    function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("pwd").value;
+
+        var http = new XMLHttpRequest();
+        http.open("GET", 'http://localhost:8082/user/login/' + username + '/' + password , true);
+     //   http.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        http.send(null);
+        http.onload = function() {
+            if(http.responseText == 'true'){
+                alert("Sikeres bejelentkezés!");
+            }else{
+                alert("Sikertelen bejelentkezés!")
+            }
+
+        }
+    }
+
+    function logout() {
+        var logoutt = new HttpClient();
+        logoutt.get('http://localhost:8082/user/logout/' + userId , function(response) {
+            console.log(response);
+            window.location.reload()
+        });
+    }
+
+
+
+    var topNew = new HttpClient();
+    topNew.get('http://localhost:8082/book/topNew', function(response) {
+
+     /* var asd = '{"book": [' + '{"isbn":911111,"cim":"bh","kategoria":"b","darab":9,"leiras":"87","kolcsonzesek_szama":78,"feltoltes_datuma":""}, ' +
+      '{"isbn":0,"cim":"hb","kategoria":"bhb","darab":7,"leiras":"78","kolcsonzesek_szama":9,"feltoltes_datuma":""},' +
+      '{"isbn":0,"cim":"bhbh","kategoria":"hbh","darab":8,"leiras":"87","kolcsonzesek_szama":9,"feltoltes_datuma":""},' +
+       '{"isbn":0,"cim":"bhbh","kategoria":"hbh","darab":9,"leiras":"87","kolcsonzesek_szama":9,"feltoltes_datuma":""},' +
+        '{"isbn":0,"cim":"h","kategoria":"hghg","darab":777,"leiras":"tgzg","kolcsonzesek_szama":7,"feltoltes_datuma":""},' +
+         '{"isbn":0,"cim":"bh","kategoria":"hbh","darab":9,"leiras":"87","kolcsonzesek_szama":7,"feltoltes_datuma":""},' +
+        '{"isbn":0,"cim":"qdaa","kategoria":"sddfs","darab":2131,"leiras":"fsadda","kolcsonzesek_szama":0,"feltoltes_datuma":"2017-11-28"}]}';
+*/
+      //  console.log(response);
+        var topN = JSON.parse(response);
+
+        document.getElementById("topN0").innerHTML = "<a href='leiras.html?isbn="+ topN.book[0].isbn +"'>"+ topN.book[0].cim +"</a>";
+        document.getElementById("topN1").innerHTML = "<a href='leiras.html?isbn="+ topN.book[1].isbn +"'>"+ topN.book[1].cim +"</a>";
+        document.getElementById("topN2").innerHTML = "<a href='leiras.html?isbn="+ topN.book[2].isbn +"'>"+ topN.book[2].cim +"</a>";
+        document.getElementById("topN3").innerHTML = "<a href='leiras.html?isbn="+ topN.book[3].isbn +"'>"+ topN.book[3].cim +"</a>";
+        document.getElementById("topN4").innerHTML = "<a href='leiras.html?isbn="+ topN.book[4].isbn +"'>"+ topN.book[4].cim +"</a>";
+
+
+    });
+
+
+    var topViewed = new HttpClient();
+    topViewed.get('http://localhost:8082/book/topViewed', function(response) {
+
+      //  console.log(response);
+        var topV = JSON.parse(response);
+
+        document.getElementById("topV0").innerHTML = "<a href='leiras.html?isbn="+ topV.book[0].isbn +"'>"+ topV.book[0].cim +"</a>";
+        document.getElementById("topV1").innerHTML = "<a href='leiras.html?isbn="+ topV.book[1].isbn +"'>"+ topV.book[1].cim +"</a>";
+        document.getElementById("topV2").innerHTML = "<a href='leiras.html?isbn="+ topV.book[2].isbn +"'>"+ topV.book[2].cim +"</a>";
+        document.getElementById("topV3").innerHTML = "<a href='leiras.html?isbn="+ topV.book[3].isbn +"'>"+ topV.book[3].cim +"</a>";
+        document.getElementById("topV4").innerHTML = "<a href='leiras.html?isbn="+ topV.book[4].isbn +"'>"+ topV.book[4].cim +"</a>";
+
+
+    });
+
+
+    var topBorrowed = new HttpClient();
+    topBorrowed.get('http://localhost:8082/book/topBorrowed', function(response) {
+
+        //  console.log(response);
+        var topB= JSON.parse(response);
+
+        document.getElementById("topB0").innerHTML = "<a href='leiras.html?isbn="+ topB.book[0].isbn +"'>"+ topB.book[0].cim +"</a>";
+        document.getElementById("topB1").innerHTML = "<a href='leiras.html?isbn="+ topB.book[1].isbn +"'>"+ topB.book[1].cim +"</a>";
+        document.getElementById("topB2").innerHTML = "<a href='leiras.html?isbn="+ topB.book[2].isbn +"'>"+ topB.book[2].cim +"</a>";
+        document.getElementById("topB3").innerHTML = "<a href='leiras.html?isbn="+ topB.book[3].isbn +"'>"+ topB.book[3].cim +"</a>";
+        document.getElementById("topB4").innerHTML = "<a href='leiras.html?isbn="+ topB.book[4].isbn +"'>"+ topB.book[4].cim +"</a>";
+
+
+    });
+
+
+
+
+
+
+
+</script>
+
+  </body>
+  </html>

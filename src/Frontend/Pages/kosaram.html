@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <title>Könyvtár</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../Scripts/reg.js"></script>
+    <link rel="stylesheet" type="text/css" href="../CSS/theme.css">
+    <script src="../Scripts/API.js"></script>
+</head>
+<body>
+
+<div class="jumbotron">
+    <div class="container ">
+        <h1>Online Könyvtár</h1>
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="fooldal.html">Főoldal</a></li>
+                <li><a href="konyvekbongeszese.html">Könyvek böngészése</a></li>
+                <li class="active"><a href="kosaram.html">Kosár</a></li>
+                <li><a href="konyvhozzaad.html">Könyv beadás</a></li>
+                <li><a href="kapcsolat.html">Kapcsolat</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Keresés" name="q">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Kosaram</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead class="tableHead">
+                        <tr>
+                            <td>#</td>
+                            <td>ISBN</td>
+                            <td>Cím</td>
+                            <td>Író</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1234567890</td>
+                            <td>Címe</td>
+                            <td>Írója</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <button type="submit" class="btn btn-primary btn-block">Megerősítés</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
